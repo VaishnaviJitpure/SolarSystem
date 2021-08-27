@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Log In</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+       <form action="self_assessment" method="POST">
+		<input type="text" name="firstname" placeholder="First Name" class="form-control"> </br>
+		<input type="text" name="lastname"  placeholder="Last Name" class="form-control"> </br>
+		<input type="email" name="email"  placeholder="Email" class="form-control"> </br>
+        <input type="text" name="phonNumber"  placeholder="Contact" class="form-control"></br>
+		<input type="text" name="location"  placeholder="Location" class="form-control"></br>
+        <input type="submit" value="Submit" class="btn btn-success" >
+
+	</form>
+	</div>
+	
+	 <script type="text/javascript">
+        	var area_prefix="meter sqr";
+        	
+        	function power_requirement(power)
+        	{
+        		const power_generation=75
+              	var number_of_pannel=power/power_generation;
+              	const size_of_pannel=2;
+                var area_requirement =size_of_pannel*number_of_pannel;
+              	$("#panl_requirement").val(number_of_pannel);
+              	$("#area").val(area_requirement);
+            }
+        	function pannel_requirement(pannel)
+        	{
+              const size_of_pannel=2;
+              var area_requirement =size_of_pannel*pannel;
+              const power_generation=75
+              var total_power_generation=power_generation*pannel;
+              $("#area").val(area_requirement)+area_prefix;
+              $("#pwr_requirment").val(total_power_generation);
+              
+        	}
+
+        	function area_requirement(area)
+        	{
+              const size_of_pannel=2;
+              var number_of_pannel =area/size_of_pannel;
+              const power_generation=75
+              var total_power_generation=power_generation*number_of_pannel;
+              $("#panl_requirement").val(number_of_pannel);
+              $("#pwr_requirment").val(total_power_generation);
+              
+        	}
+        </script>
+</body>
+</html>
